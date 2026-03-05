@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../components/Card/Card'
 
 import styles from './Body.module.css'
+import { CardApi } from '../../components/Card/CardApi'
 
 const Body = () => {
   //array com nomes diferentes
@@ -32,6 +33,9 @@ const Body = () => {
                     />
                 ))}
             </div>
+
+            <h3>Usuários vindos da API</h3>
+            <CardApi/>
        </main>
     </>
   )
