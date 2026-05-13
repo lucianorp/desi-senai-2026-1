@@ -49,6 +49,34 @@
         "neighborhood": "centro",
         "reference": "muro branco"
       }
+    },
+    {
+      "id": "2",
+      "fullName": "Maria da Silva",
+      "gender": "Feminino",
+      "birthdate": "11/12/1980",
+      "cpf": "958.858.858-88",
+      "rg": "958.858.858-88",
+      "maritalStatus": "solteiro",
+      "phone": "(48)85544-5955",
+      "email": "joao@email.com",
+      "birthplace": "Florianópolis",
+      "emergencyContact": "(48)85544-5955",
+      "allergies": "A,B",
+      "specialCare": "cuidado A",
+      "healthInsurance": "unimed",
+      "insuranceNumber": "22121",
+      "insuranceValidity": "15/01/2027",
+      "address": {
+        "cep": "88000-000",
+        "city": "Florianópolis",
+        "state": "SC",
+        "street": "Rua X",
+        "number": "30",
+        "complement": "casa",
+        "neighborhood": "centro",
+        "reference": "muro branco"
+      }
     }
   ],
   "consults": [

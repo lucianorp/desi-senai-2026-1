@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate, NavLink } from 'react-router'
 import {
     MdDashboard,
     MdExitToApp,
@@ -63,40 +63,58 @@ const SideMenu = () => {
             <nav className='flex-1 p-4 space-y-4 overflow-y-auto'>
                 <ul className='space-y-3'>
                     <li>
-                        <Link
-                            to='/dashboard'
-                            className='flex items-center gap-3 hover:text-cyan-300'
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) =>
+                                `flex gap-2 hover:text-cyan-300 ${isActive ? "text-cyan-300" : "text-white"
+                                }`
+                            }
                         >
                             <MdDashboard size={20} />
                             {!isCollapsed && <span>Início</span>}
-                        </Link>
+                        </NavLink>
+
+
                     </li>
                     <li>
-                        <Link
-                            to='/pacientes'
-                            className='flex items-center gap-3 hover:text-cyan-300'
+                        <NavLink
+                            to="/pacientes"
+                            className={({ isActive }) =>
+                                `flex gap-2 hover:text-cyan-300 ${isActive ? "text-cyan-300" : "text-white"
+                                }`
+                            }
                         >
                             <FaUserPlus size={20} />
                             {!isCollapsed && <span>Pacientes</span>}
-                        </Link>
+                        </NavLink>
+
                     </li>
                     <li>
-                        <Link
-                            to='/consultas'
-                            className='flex items-center gap-3 hover:text-cyan-300'
+                        <NavLink
+                            to="/consultas"
+                            className={({ isActive }) =>
+                                `flex gap-2 hover:text-cyan-300 ${isActive ? "text-cyan-300" : "text-white"
+                                }`
+                            }
                         >
-                            <FaCalendarCheck size={20} />
+                            <MdMenu size={20} />
                             {!isCollapsed && <span>Consultas</span>}
-                        </Link>
+                        </NavLink>
+
+
                     </li>
                     <li>
-                        <Link
-                            to='/exames'
-                            className='flex items-center gap-3 hover:text-cyan-300'
+                        <NavLink
+                            to="/exames"
+                            className={({ isActive }) =>
+                                `flex gap-2 hover:text-cyan-300 ${isActive ? "text-cyan-300" : "text-white"
+                                }`
+                            }
                         >
                             <FaListAlt size={20} />
                             {!isCollapsed && <span>Exames</span>}
-                        </Link>
+                        </NavLink>
+
                     </li>
                 </ul>
             </nav>
@@ -113,7 +131,7 @@ const SideMenu = () => {
                 </button>
             </div>
 
-        </aside>
+        </aside >
     )
 }
 
