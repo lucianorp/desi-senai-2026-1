@@ -99,7 +99,7 @@ const SideMenu = () => {
                             }
                         >
                             <FaUserPlus size={20} />
-                            {!isCollapsed && <span>Pacientes</span>}
+                            {!isCollapsed && <span>Registrar Paciente</span>}
                         </NavLink>
 
                     </li>
