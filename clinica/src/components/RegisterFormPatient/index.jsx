@@ -81,10 +81,54 @@ function RegisterFormPatient() {
 
     }
 
+
+    //validação da data de nascimento
+
+    const yesterday = new Date() // retorna nesse exemplo => Mon Jun 15 2026 14:30:00 GMT-0300
+    yesterday.setDate(yesterday.getDate() - 1) // retorna o dia atual menos um (ontem)
+
+    //toISOString retorna uma string no formato 2026-06-14T17:30:00.000Z
+    /*
+    2026-06-14 → data
+    T → separador
+    17:30:00.000Z → horário UTC
+    */
+
+    /*
+    .split("T")[0]
+    separa a string no caractere T
+    E pega a primeira parte do do índice devolvido, no caso "2026-06-14"
+
+    <input
+        type="date"
+        max="2026-06-14"
+    />
+
+    */
+
+
+    const maxBirthDate = yesterday.toISOString().split("T")[0]
+
     //submit form
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        // const selectedDate = new Date(formData.birthdate)
+
+        // const today = new Date()
+        // today.setHours(0, 0, 0, 0)
+
+        // if (selectedDate >= today) {
+        //     toast.error("A data de nascimento deve ser anterior à data atual.", {
+        //         autoClose: 2000,
+        //         hideProgressBar: true
+        //     })
+        //     return
+        // }
+
+
+
         setIsSaving(true)
 
         try {
@@ -187,6 +231,7 @@ function RegisterFormPatient() {
                         id='birthdate'
                         value={formData.birthdate}
                         onChange={handleInputChange}
+                        max={maxBirthDate}
                         required
                         className='w-full border p-2 rounded-lg focus:ring-2 focus:ring-cyan-600 outline-none'
                     />
@@ -488,11 +533,11 @@ function RegisterFormPatient() {
                     />
                 </fieldset>
 
-            </div>
+            </div >
 
             {/* botão de envio */}
 
-            <div className='flex justify-end gap-3 pt-4'>
+            < div className='flex justify-end gap-3 pt-4' >
                 <button
                     type='submit'
                     disabled={isSaving}
@@ -501,10 +546,10 @@ function RegisterFormPatient() {
                     {isSaving ? "Salvando..." : "Salvar"}
 
                 </button>
-            </div>
+            </div >
 
 
-        </form>
+        </form >
     )
 }
 
